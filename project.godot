@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "CheatCodeDetector",
+"language": "GDScript",
+"path": "res://CheatDetector.gd"
+} ]
+_global_script_class_icons={
+"CheatCodeDetector": ""
+}
+
 [application]
 
 config/name="Witch VS Godot"

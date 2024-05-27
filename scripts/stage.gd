@@ -25,3 +25,7 @@ func _on_Player_skill_cd(ball, shield):
 	
 	$CanvasLayer/ShieldSkillBg/ShieldSkill.value = shield
 	$CanvasLayer/WaterBallSkillBg/WaterBallSkill.value = ball
+
+
+func _on_CheatDetector_cheat_detected(code):
+	print("cheat detected! code: ", code)

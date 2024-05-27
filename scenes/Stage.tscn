@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/Illustration2.png" type="Texture" id=1]
 [ext_resource path="res://scripts/stage.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/Magic.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/Illustration3.png" type="Texture" id=7]
 [ext_resource path="res://assets/Illustration8.png" type="Texture" id=8]
+[ext_resource path="res://CheatDetector.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Shader" id=7]
 code = "shader_type canvas_item;
@@ -58,6 +59,8 @@ font_data = ExtResource( 6 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="CheatDetector" parent="." instance=ExtResource( 9 )]
 
 [node name="Background" type="TextureRect" parent="."]
 material = SubResource( 8 )
@@ -165,6 +168,7 @@ text = "0"
 align = 1
 valign = 1
 
+[connection signal="cheat_detected" from="CheatDetector" to="." method="_on_CheatDetector_cheat_detected"]
 [connection signal="send_global_pos" from="Player" to="Dragon" method="_on_Player_send_global_pos"]
 [connection signal="skill_cd" from="Player" to="." method="_on_Player_skill_cd"]
 [connection signal="stat_changed" from="Player" to="." method="_on_Player_stat_changed"]
