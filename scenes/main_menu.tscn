@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Illustration.png" type="Texture" id=1]
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/Magic.otf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 72
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 96
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -24.0
+margin_right = -347.0
+margin_bottom = -363.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 7 )
+text = "WITCH VS GODOT
+BETA"
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 186.0
+margin_top = 242.0
+margin_right = -400.0
+margin_bottom = -91.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -359.0
+margin_top = -565.0
+margin_right = -59.0
+margin_bottom = -365.0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 5 )
+
+[node name="Label" type="Label" parent="VBoxContainer/StartButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Start "
+align = 2
+valign = 1
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 102.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+
+[node name="Label" type="Label" parent="VBoxContainer/QuitButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Quit "
+align = 2
+valign = 1
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
